@@ -1,0 +1,118 @@
+@import 'global.less';
+@import 'theme.less';
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: "微軟正黑體 light";
+}
+
+body {
+    .main-gradient();
+
+    .app-container {
+        width: 100%;
+        height: calc(100% + 20px);
+        position: absolute;
+        .main-gradient();
+
+        .front-page {
+            top: 50%;
+            width: 100%;
+            display: inline-block;
+            position: relative;
+            .transform(translateY(-50%));
+
+            .app-brand {
+
+                .app-logo {
+                    margin: 0 auto;
+                    margin-top: -40px;
+                    display: block;
+                    position: relative;
+                }
+
+                .brand-title {
+                    margin-top: @small-gap;
+                    color: @white;
+                    text-align: center;
+                    position: relative;
+                }
+
+                .brand-subtitle {
+                    // margin-top: @small-x-gap;
+                    margin-top: 5px;
+                    color: @white;
+                    text-align: center;
+                    position: relative;
+                    letter-spacing: 1px;
+                    font-weight: normal;
+                }
+            }
+
+            .device-form {
+                width: 100%;
+                position: relative;
+
+                .textfield {
+                    margin: 0 auto;
+                    margin-top: @large-gap;
+                    padding-left: 45px;
+                    width: 210px;
+                    height: 40px;
+                    border: none;
+                    outline: none;
+                    color: @white;
+                    display: block;
+                    position: relative;
+                    border-radius: 40px;
+                    background-color: rgba(255, 255, 255, 0.25);
+                    background-repeat: no-repeat;
+                    background-position: 15px center;
+                }
+
+                .firebase-textfield {
+                    background-size: 20px;
+                    background-image: url('../images/icons8_Cloud_50px.png');
+                }
+
+                .password-textfield {
+                    margin-top: @small-gap;
+                    font-size: 14px;
+                    letter-spacing: 2px;
+                    background-size: 15px;
+                    background-image: url('../images/icons8_Key_50px.png');
+                }
+
+                .launch-button {
+                    margin: 0 auto;
+                    margin-top: @large-gap;
+                    width: 250px;
+                    height: 50px;
+                    border: none;
+                    outline: none;
+                    color: @white;
+                    font-size: 14px;
+                    display: block;
+                    position: relative;
+                    border-radius: 50px;
+                    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.75);
+                    background-color: @pink;
+                    // .yellow-gradient();
+                }
+            }
+
+        }
+
+        .copyright {
+            width: 100%;
+            bottom: @small-x-gap;
+            position: absolute;
+            color: @white;
+            font-size: 10px;
+            text-align: center;
+        }
+    }
+}

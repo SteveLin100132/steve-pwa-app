@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <title>Steve APP</title>
+
+    <link rel="stylesheet/less" type="text/css" href="styles/index.less">
+
+    <script src="bower_components/less/dist/less.min.js"></script>
+
+    <!-- TODO add manifest here -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Steve APP">
+
+    <link rel="apple-touch-icon" sizes="256x256" href="./images/icons/icon-256x256.png">
+    <!-- <link rel="apple-touch-icon" sizes="192x192" href="./images/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./images/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./images/icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="./images/icons/icon-128x128.png"> -->
+    <link rel="apple-touch-startup-image" sizes="750x1334" href="images/startup.png">
+
+    <meta name="msapplication-TileImage" content="./images/icons/icon-256x256.png">
+    <meta name="msapplication-TileColor" content="#27006D">
+</head>
+<body>
+    <main class="app-container">
+        <div class="front-page">
+            <div class="app-brand">
+                <img class="app-logo" src="./images/logo.svg" height="195" alt="steve-app-logo">
+                <h3 class="brand-title">STEVE APP</h3>
+                <h5 class="brand-subtitle">Internet of Thing Arround Enviroment</h5>
+            </div>
+
+            <div class="device-form">
+                <input class="firebase-textfield textfield" type="text" placeholder="firebase.com" >
+                <input class="password-textfield textfield" type="password" placeholder="password" >
+
+                <button class="launch-button" type="button">Launch Device</button>
+            </div>
+
+        </div>
+
+        <p class="copyright">Copyright © 2018 Steve Lin. All rights reserved</div>
+    </main>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>
