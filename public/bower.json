@@ -1,0 +1,17 @@
+{
+  "name": "public",
+  "homepage": "https://github.com/SteveLin100132/steve-pwa-app",
+  "authors": [
+    "Steve Lin <jojo404032@gmail.com>"
+  ],
+  "description": "pwa-package",
+  "main": "index.html",
+  "keywords": [
+    "pwa"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "less": "^3.0.0",
+    "firebase": "^5.1.0"
+  }
+}

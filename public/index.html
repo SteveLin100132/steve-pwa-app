@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
     <title>Steve APP</title>
 
+    <!-- style -->
     <link rel="stylesheet/less" type="text/css" href="styles/index.less">
 
+    <!-- bower components -->
     <script src="bower_components/less/dist/less.min.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
 
-    <!-- TODO add manifest here -->
+    <!-- manifest -->
     <link rel="manifest" href="manifest.json">
 
     <!-- Add to home screen for Safari on iOS -->
@@ -19,10 +22,6 @@
     <meta name="apple-mobile-web-app-title" content="Steve APP">
 
     <link rel="apple-touch-icon" sizes="256x256" href="./images/icons/icon-256x256.png">
-    <!-- <link rel="apple-touch-icon" sizes="192x192" href="./images/icons/icon-192x192.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./images/icons/icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./images/icons/icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="128x128" href="./images/icons/icon-128x128.png"> -->
     <link rel="apple-touch-startup-image" sizes="750x1334" href="images/startup.png">
 
     <meta name="msapplication-TileImage" content="./images/icons/icon-256x256.png">
@@ -38,12 +37,11 @@
             </div>
 
             <div class="device-form">
-                <input class="firebase-textfield textfield" type="text" placeholder="firebase.com" >
-                <input class="password-textfield textfield" type="password" placeholder="password" >
+                <input class="firebase-textfield textfield" type="text" placeholder="Firebase User" >
+                <input class="password-textfield textfield" type="password" placeholder="Password" >
 
                 <button class="launch-button" type="button">Launch Device</button>
             </div>
-
         </div>
 
         <p class="copyright">Copyright © 2018 Steve Lin. All rights reserved</div>
