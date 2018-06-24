@@ -10,6 +10,9 @@
  * 使用說明：
  */
 
+import { FIREBASE_CONNECTION as FIREBASE } from "./models/firebase-connection.js";
+import { LOGIN_CONTROLLER } from "./controllers/login-controller.js";
+
 (function() {
     'use strict';
 
@@ -48,6 +51,11 @@
          */
         contentLoaded: function() {
             // TODO Proccess behavior after content load.
+            FIREBASE.init();
+            FIREBASE.getRef('user', (val) => {
+                let user = val;
+                console.log(user);
+            });
         },
         /**
          * [Register service worker for offline cache]
@@ -56,21 +64,21 @@
          */
         registerServiceWorker: function() {
             if('serviceWorker' in navigator) {
-                console.log('[Service Worker] exist');
+                console.log("[Service Worker] exist");
 
                 navigator
                     .serviceWorker
                     .register('./app-worker.js')
                     .then(function(res) {
-                        console.log('[app-worker.js] registered');
+                        console.log("[app-worker.js] registered");
                         console.log(res.scope);
                     })
                     .catch(function(err) {
-                        console.log('[app-worker.js] occur error: ');
+                        console.log("[app-worker.js] occur error: ");
                         console.log(err);
                     });
             } else {
-                console.log('[Service Worker] not exist');
+                console.log("[Service Worker] not exist");
             }
         }
     }
@@ -78,38 +86,38 @@
     APP.init();
 
     // TODO modify here to your own firebase
-    var config = {
-        apiKey: "",
-        authDomain: "<Project ID>.firebaseapp.com",
-        databaseURL: "https://<Project ID>.firebaseio.com/"
-    };
-    firebase.initializeApp(config);
-
-    var firebaseDB = firebase.database();
-
-    var userRef = firebase.database().ref('user');
-    var USER;
-    var PASSWORD;
-    userRef.on('value', function(snapshot) {
-        // console.log(snapshot.val());
-        USER = snapshot.val().id;
-        PASSWORD = snapshot.val().password;
-    });
-
-    var launchButton = document.querySelector('.launch-button');
-    var firebaseTextfield = document.querySelector('.firebase-textfield');
-    var passwordTextfield = document.querySelector('.password-textfield');
-
-    launchButton.addEventListener('click', launchButtonClicked);
-
-    function launchButtonClicked() {
-        var firebaseUser = firebaseTextfield.value;
-        var firebasePassword = passwordTextfield.value;
-
-        if(firebaseUser === USER && firebasePassword === PASSWORD) {
-            alert("Access Successed");
-        } else {
-            alert("Access Denied");
-        }
-    }
+    // var config = {
+    //     apiKey: "",
+    //     authDomain: "<Project ID>.firebaseapp.com",
+    //     databaseURL: "https://<Project ID>.firebaseio.com/"
+    // };
+    // firebase.initializeApp(config);
+    //
+    // var firebaseDB = firebase.database();
+    //
+    // var userRef = firebase.database().ref('user');
+    // var USER;
+    // var PASSWORD;
+    // userRef.on('value', function(snapshot) {
+    //     // console.log(snapshot.val());
+    //     USER = snapshot.val().id;
+    //     PASSWORD = snapshot.val().password;
+    // });
+    //
+    // var launchButton = document.querySelector('.launch-button');
+    // var firebaseTextfield = document.querySelector('.firebase-textfield');
+    // var passwordTextfield = document.querySelector('.password-textfield');
+    //
+    // launchButton.addEventListener('click', launchButtonClicked);
+    //
+    // function launchButtonClicked() {
+    //     var firebaseUser = firebaseTextfield.value;
+    //     var firebasePassword = passwordTextfield.value;
+    //
+    //     if(firebaseUser === USER && firebasePassword === PASSWORD) {
+    //         alert("Access Successed");
+    //     } else {
+    //         alert("Access Denied");
+    //     }
+    // }
 })();
