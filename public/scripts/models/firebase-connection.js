@@ -35,9 +35,9 @@ const FIREBASE_CONNECTION = (function() {
         config: function() {
             // TODO modify here to your own firebase
             return {
-                apiKey: "AIzaSyDaMbHLq0aJC6WnYh8giTPtQS7p9ORGSSE",
-                authDomain: "stevelinapp.firebaseapp.com",
-                databaseURL: "https://stevelinapp.firebaseio.com/"
+                apiKey: "",
+                authDomain: "<Project ID>.firebaseapp.com",
+                databaseURL: "https://<Project ID>.firebaseio.com/"
             };
         },
         /**
