@@ -18,6 +18,8 @@
  * @method [init]     [initialize firebase]
  * @method [getRef]   [get reference data without auto update]
  * @return {[Object]} [firebase]
+ * Create 2018/06/24
+ * @author Chieng-Yu Lin (Email:jojo404032@gmil.com, Phone:+886-973-686-705)
  */
 const FIREBASE_CONNECTION = (function() {
     'use strict';
@@ -33,9 +35,9 @@ const FIREBASE_CONNECTION = (function() {
         config: function() {
             // TODO modify here to your own firebase
             return {
-                apiKey: "",
-                authDomain: "<Project ID>.firebaseapp.com",
-                databaseURL: "https://<Project ID>.firebaseio.com/"
+                apiKey: "AIzaSyDaMbHLq0aJC6WnYh8giTPtQS7p9ORGSSE",
+                authDomain: "stevelinapp.firebaseapp.com",
+                databaseURL: "https://stevelinapp.firebaseio.com/"
             };
         },
         /**

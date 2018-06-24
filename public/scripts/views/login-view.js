@@ -10,6 +10,18 @@
  * 使用說明：
  */
 
+/**
+ * [LOGIN_VIEW build login page view]
+ * @type   {IFTT}
+ * @member {Object} container       [login page container]
+ * @member {Array}  elements        [login page access UI elements]
+ * @method [init]                   [initialize login page view]
+ * @method [render]                 [render the login page]
+ * @method validateFailedTextfield] [add the validate failed style for textfield]
+ * @return {[Object]}               [login view]
+ * Create 2018/06/25
+ * @author Chieng-Yu Lin (Email:jojo404032@gmil.com, Phone:+886-973-686-705)
+ */
 const LOGIN_VIEW = (function() {
     'use strict';
 
@@ -21,10 +33,29 @@ const LOGIN_VIEW = (function() {
     }
 
     loginView.prototype = {
+        /**
+         * [initialize login page view]
+         * Create 2018/06/25
+         * @author Chieng-Yu Lin (Email:jojo404032@gmil.com, Phone:+886-973-686-705)
+         */
         init: function() {
             this.render();
         },
+        /**
+         * [render the login page]
+         * Create 2018/06/25
+         * @author Chieng-Yu Lin (Email:jojo404032@gmil.com, Phone:+886-973-686-705)
+         */
         render: function() {
+        },
+        /**
+         * [add the validate failed style for textfield]
+         * @param {[Object]} elm [element which was validating failed]
+         * Create 2018/06/25
+         * @author Chieng-Yu Lin (Email:jojo404032@gmil.com, Phone:+886-973-686-705)
+         */
+        validateFailedTextfield: function(elm) {
+            elm.classList.add('textfield-validate-error');
         }
     }
 

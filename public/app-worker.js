@@ -3,7 +3,13 @@ var cacheName = 'steveapp-pwa';
 var filesToCache = [
     "/",
     "./index.html",
+    "./bower_components/firebase/firebase.js",
+    "./bower_components/less/dist/less.min.js",
     "./scripts/app.js",
+    "./script/models/firebase-connection.js",
+    "./script/models/login-model.js",
+    "./script/controllers/login-controller.js",
+    "./script/views/login-view.js",
     "./styles/globla.less",
     "./styles/index.less",
     "./styles/theme.less",
@@ -13,7 +19,9 @@ var filesToCache = [
     "./images/icons/icon-152x152.png",
     "./images/icons/icon-192x192.png",
     "./images/icons/icon-256x256.png",
-    "./images/750x1334-startup.png"
+    "./images/750x1334-startup.png",
+    "./images/icons8_Cloud_50px.png",
+    "./images/icons8_Key_50px.png"
 ];
 
 self.addEventListener('install', function(e) {

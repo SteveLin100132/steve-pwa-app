@@ -13,6 +13,18 @@
 import { LOGIN_VIEW } from "../views/login-view.js";
 import { LOGIN_MODEL } from "../models/login-model.js";
 
+/**
+ * [LOGIN_CONTROLLER build login page controller]
+ * @type   {IFTT}
+ * @member {Object} view       [login page 'view']
+ * @member {Object} model      [login page 'model']
+ * @method [init]              [initialize login page controller]
+ * @method [addValidateRules]  [add the validation rule for elements]
+ * @method [attachLanuchEvent] [attach the click event while launch button clicked]
+ * @return {[Object]}          [login controller]
+ * Create 2018/06/25
+ * @author Chieng-Yu Lin (Email:jojo404032@gmil.com, Phone:+886-973-686-705)
+ */
 const LOGIN_CONTROLLER = (function() {
     'use strict';
 
@@ -24,29 +36,63 @@ const LOGIN_CONTROLLER = (function() {
     }
 
     loginController.prototype = {
+        /**
+         * [initialize login page controller]
+         * Create 2018/06/25
+         * @author Chieng-Yu Lin (Email:jojo404032@gmil.com, Phone:+886-973-686-705)
+         */
         init: function() {
             let self = this;
 
             self.addValidateRules();
             self.attachLanuchEvent();
         },
+        /**
+         * [add the validation rule for elements]
+         * Create 2018/06/25
+         * @author Chieng-Yu Lin (Email:jojo404032@gmil.com, Phone:+886-973-686-705)
+         */
         addValidateRules: function() {
             let self = this;
 
             let rules = [{
                 element: self.view.elements['.device-textfield'],
-                regexp: '^{[a-zA-Z0-9]}{4, 8}$'
+                regexp: /^[A-Za-z0-9]{4,8}$/
             }, {
                 element: self.view.elements['.password-textfield'],
-                regexp: '^{[a-zA-Z0-9]}{4, 8}$'
+                regexp: /^[A-Za-z0-9]{4,8}$/
             }];
 
             self.model.addValidateRules(rules);
         },
+        /**
+         * [attach the click event while launch button clicked]
+         * Create 2018/06/25
+         * @author Chieng-Yu Lin (Email:jojo404032@gmil.com, Phone:+886-973-686-705)
+         */
         attachLanuchEvent: function() {
             let self = this;
 
-            self.view.elements['.launch-button'].addEventListener('click', self.model.launchDevice);
+            self.view.elements['.launch-button'].addEventListener('click', () => {
+                let validate = self.model.isValidate();
+                let user = {
+                    id: self.view.elements['.device-textfield'].value,
+                    password: self.view.elements['.password-textfield'].value
+                };
+
+                if(validate.token) {
+                    let auth = self.model.authUserAccount(user, () => {
+                        self.model.launchDevice();
+                    }, (err) => {
+                        alert("Authentication Error");
+                        console.log(err);
+                    });
+                } else {
+                    for(let i = 0; i < validate.error.length; i++) {
+                        self.view.validateFailedTextfield(validate.error[i]);
+                    }
+                }
+            });
         }
     }
 
