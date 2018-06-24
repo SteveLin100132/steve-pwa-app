@@ -12,7 +12,7 @@ var filesToCache = [
     './images/icons/icon-144x144.png',
     './images/icons/icon-152x152.png',
     './images/icons/icon-192x192.png',
-    './images/icons/icon-256x256.png'
+    './images/icons/icon-256x256.png',
     './images/750x1334-startup.png'
 ];
 
